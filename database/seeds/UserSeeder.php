@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if(app()->environment('local')){
-            $this->call(CourseVideoSeeder::class);
-        }
+        factory(\App\User::class,100)->create();
+
     }
 }

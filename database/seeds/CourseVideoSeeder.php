@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Course;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CourseVideoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if(app()->environment('local')){
-            $this->call(CourseVideoSeeder::class);
-        }
+        factory(Video::class,50)->create();
     }
 }

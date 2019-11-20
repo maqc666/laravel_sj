@@ -13,6 +13,15 @@
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/','Frontend\IndexController@index')->name('index');
+Route::get('index','Admin\EntryController@loginForm');
+// 课程详情
+Route::get('course/{id}/{slug}','Frontend\CourseController@show')->name('course.show');
+// 课程列表
+Route::get('index/courses', 'Frontend\CourseController@index');
